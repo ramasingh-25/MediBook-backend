@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediBook.AuthService", "MediBook.AuthService", "{E77D41BF-B4B5-C8E8-775D-87E29CB2D353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediBook.AuthService", "MediBook.AuthService\MediBook.AuthService\MediBook.AuthService.csproj", "{9F550AD2-AA39-A387-EF72-AF791D48E5CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F550AD2-AA39-A387-EF72-AF791D48E5CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F550AD2-AA39-A387-EF72-AF791D48E5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F550AD2-AA39-A387-EF72-AF791D48E5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F550AD2-AA39-A387-EF72-AF791D48E5CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9F550AD2-AA39-A387-EF72-AF791D48E5CB} = {E77D41BF-B4B5-C8E8-775D-87E29CB2D353}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD84EBF0-E233-4548-8C95-726A3FD8E3F5}
+	EndGlobalSection
+EndGlobal

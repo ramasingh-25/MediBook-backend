@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediBook.ProviderService", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediBook.AvailabilityService", "MediBook.AvailabilityService\MediBook.AvailabilityService.csproj", "{3E76A9A0-C933-4F0C-8E6D-2ED8B27804A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediBook.AppointmentService", "MediBook.AppointmentService\MediBook.AppointmentService.csproj", "{926822A4-9A1D-4195-A986-E921C90DBA6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,18 @@ Global
 		{3E76A9A0-C933-4F0C-8E6D-2ED8B27804A1}.Release|x64.Build.0 = Release|Any CPU
 		{3E76A9A0-C933-4F0C-8E6D-2ED8B27804A1}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E76A9A0-C933-4F0C-8E6D-2ED8B27804A1}.Release|x86.Build.0 = Release|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Debug|x64.Build.0 = Debug|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Debug|x86.Build.0 = Debug|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Release|x64.ActiveCfg = Release|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Release|x64.Build.0 = Release|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Release|x86.ActiveCfg = Release|Any CPU
+		{926822A4-9A1D-4195-A986-E921C90DBA6F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

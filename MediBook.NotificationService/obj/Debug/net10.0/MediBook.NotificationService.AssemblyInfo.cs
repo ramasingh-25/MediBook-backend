@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediBook.NotificationService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60cb6e467dacefb418a6f46717d97caeea7045fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ab6a0aed209f0b88b5de8e1982975a69623953e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediBook.NotificationService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediBook.NotificationService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

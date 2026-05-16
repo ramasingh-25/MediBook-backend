@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj": {}
+    "D:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj": {}
   },
   "projects": {
-    "d:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj": {
+    "D:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj",
+        "projectUniqueName": "D:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj",
         "projectName": "MediBook.AvailabilityService",
-        "projectPath": "d:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj",
+        "projectPath": "D:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj",
         "packagesPath": "C:\\Users\\talkt\\.nuget\\packages\\",
-        "outputPath": "d:\\MediBook-backend\\MediBook.AvailabilityService\\obj\\",
+        "outputPath": "D:\\MediBook-backend\\MediBook.AvailabilityService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

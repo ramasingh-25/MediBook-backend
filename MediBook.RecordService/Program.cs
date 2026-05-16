@@ -118,15 +118,11 @@ using (var scope = app.Services.CreateScope())
 }
 
 // ─── Middleware Pipeline ──────────────────────────────────────────
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "MediBook Medical Record Service API v1");
-        options.RoutePrefix = string.Empty; // Serve Swagger UI at root
-    });
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "MediBook Medical Record Service API v1");
+});
 
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
@@ -134,6 +130,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
 
 
 

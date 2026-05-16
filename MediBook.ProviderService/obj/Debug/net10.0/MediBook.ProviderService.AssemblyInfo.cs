@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediBook.ProviderService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+631209468571775dcc9765c56b7719a1de3de9cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ab6a0aed209f0b88b5de8e1982975a69623953e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediBook.ProviderService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediBook.ProviderService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

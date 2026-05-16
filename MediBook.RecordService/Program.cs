@@ -12,7 +12,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // ─── Database ────────────────────────────────────────────────────
 builder.Services.AddDbContext<RecordDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    {
+    var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+    if (connString != null && connString.StartsWith("postgres://"))
+    {
+        var uri = new Uri(connString);
+        var userInfo = uri.UserInfo.Split(':');
+        connString = $"Host={uri.Host};Port={(uri.Port > 0 ? uri.Port : 5432)};Database={uri.LocalPath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Require;Trust Server Certificate=true";
+    }
+    options.UseNpgsql(connString);
+});
 
 // ─── Dependency Injection ─────────────────────────────────────────
 builder.Services.AddScoped<IRecordRepository, RecordRepository>();
@@ -121,3 +130,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+

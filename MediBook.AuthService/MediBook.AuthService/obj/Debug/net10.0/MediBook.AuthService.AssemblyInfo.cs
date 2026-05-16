@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediBook.AuthService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60cb6e467dacefb418a6f46717d97caeea7045fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+273e7395a96cf151c1cea4f81c64f4490d4cd6cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediBook.AuthService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediBook.AuthService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

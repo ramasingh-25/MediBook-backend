@@ -12,13 +12,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // ─── Database ────────────────────────────────────────────────────
 builder.Services.AddDbContext<SlotDbContext>(options =>
-    {
+{
     var connString = builder.Configuration.GetConnectionString("DefaultConnection");
-    if (connString != null && connString.StartsWith("postgres://"))
+    if (!string.IsNullOrEmpty(connString))
     {
-        var uri = new Uri(connString);
-        var userInfo = uri.UserInfo.Split(':');
-        connString = $"Host={uri.Host};Port={(uri.Port > 0 ? uri.Port : 5432)};Database={uri.LocalPath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Require;Trust Server Certificate=true";
+        connString = connString.Trim('"', ' ');
+        if (connString.StartsWith("postgres://") || connString.StartsWith("postgresql://"))
+        {
+            var uri = new Uri(connString);
+            var userInfo = uri.UserInfo.Split(':');
+            connString = $"Host={uri.Host};Port={(uri.Port > 0 ? uri.Port : 5432)};Database={uri.LocalPath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Require;Trust Server Certificate=true";
+        }
     }
     options.UseNpgsql(connString);
 });
@@ -129,4 +133,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
 

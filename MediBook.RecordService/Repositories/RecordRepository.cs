@@ -50,8 +50,9 @@ namespace MediBook.RecordService.Repositories
 
         public async Task<List<MedicalRecord>> FindByFollowUpDate(DateTime followUpDate)
         {
+            var targetDate = DateTime.SpecifyKind(followUpDate.Date, DateTimeKind.Utc);
             return await _context.MedicalRecords
-                .Where(r => r.FollowUpDate.HasValue && r.FollowUpDate.Value.Date == followUpDate.Date)
+                .Where(r => r.FollowUpDate.HasValue && r.FollowUpDate >= targetDate && r.FollowUpDate < targetDate.AddDays(1))
                 .ToListAsync();
         }
 

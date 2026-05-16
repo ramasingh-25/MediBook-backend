@@ -15,6 +15,22 @@ namespace MediBook.AvailabilityService.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // Global UTC converter for all DateTime properties to satisfy Npgsql/PostgreSQL
+            var dateTimeConverter = new Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter<DateTime, DateTime>(
+                v => v.Kind == DateTimeKind.Utc ? v : DateTime.SpecifyKind(v, DateTimeKind.Utc),
+                v => v.Kind == DateTimeKind.Utc ? v : DateTime.SpecifyKind(v, DateTimeKind.Utc));
+
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var property in entityType.GetProperties())
+                {
+                    if (property.ClrType == typeof(DateTime) || property.ClrType == typeof(DateTime?))
+                    {
+                        property.SetValueConverter(dateTimeConverter);
+                    }
+                }
+            }
+
             modelBuilder.Entity<AvailabilitySlot>(entity =>
             {
                 entity.HasKey(s => s.SlotId);

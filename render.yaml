@@ -1,0 +1,102 @@
+databases:
+  - name: medibook-db
+    databaseName: medibook
+    user: medibook_user
+    plan: free
+
+services:
+  - type: web
+    name: medibook-auth
+    env: docker
+    dockerContext: ./MediBook.AuthService/MediBook.AuthService
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: medibook-db
+          property: connectionString
+
+  - type: web
+    name: medibook-appointment
+    env: docker
+    dockerContext: ./MediBook.AppointmentService
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: medibook-db
+          property: connectionString
+
+  - type: web
+    name: medibook-provider
+    env: docker
+    dockerContext: ./MediBook.ProviderService
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: medibook-db
+          property: connectionString
+
+  - type: web
+    name: medibook-availability
+    env: docker
+    dockerContext: ./MediBook.AvailabilityService
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: medibook-db
+          property: connectionString
+
+  - type: web
+    name: medibook-notification
+    env: docker
+    dockerContext: ./MediBook.NotificationService
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: medibook-db
+          property: connectionString
+
+  - type: web
+    name: medibook-payment
+    env: docker
+    dockerContext: ./MediBook.PaymentService
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: medibook-db
+          property: connectionString
+
+  - type: web
+    name: medibook-record
+    env: docker
+    dockerContext: ./MediBook.RecordService
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: medibook-db
+          property: connectionString
+
+  - type: web
+    name: medibook-review
+    env: docker
+    dockerContext: ./MediBook.ReviewService
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        fromDatabase:
+          name: medibook-db
+          property: connectionString

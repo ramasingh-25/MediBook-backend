@@ -65,12 +65,23 @@ namespace MediBook.AvailabilityService.Controllers
         [HttpPut("{slotId}/book")]
         public async Task<ActionResult<SlotResponse>> BookSlot(string slotId)
         {
-            var slot = await _scheduleService.BookSlot(slotId);
-            if (slot == null)
+            try
             {
-                return BadRequest(new { message = "Slot not found or not available for booking." });
+                var slot = await _scheduleService.BookSlot(slotId);
+                if (slot == null)
+                {
+                    return BadRequest(new { message = "Slot not found or not available for booking." });
+                }
+                return Ok(slot);
             }
-            return Ok(slot);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { 
+                    message = "Failed to book slot", 
+                    error = ex.Message,
+                    innerError = ex.InnerException?.Message 
+                });
+            }
         }
 
         [HttpPut("{slotId}/block")]

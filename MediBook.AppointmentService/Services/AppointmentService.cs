@@ -22,7 +22,7 @@ namespace MediBook.AppointmentService.Services
                 ProviderId = request.ProviderId,
                 SlotId = request.SlotId,
                 ServiceType = request.ServiceType,
-                AppointmentDate = request.AppointmentDate,
+                AppointmentDate = DateTime.SpecifyKind(request.AppointmentDate.Date, DateTimeKind.Utc),
                 StartTime = request.StartTime,
                 EndTime = request.EndTime,
                 Status = "Scheduled",
@@ -77,7 +77,7 @@ namespace MediBook.AppointmentService.Services
             if (appointment == null) return null;
 
             appointment.SlotId = request.NewSlotId;
-            appointment.AppointmentDate = request.NewAppointmentDate;
+            appointment.AppointmentDate = DateTime.SpecifyKind(request.NewAppointmentDate.Date, DateTimeKind.Utc);
             appointment.StartTime = request.NewStartTime;
             appointment.EndTime = request.NewEndTime;
             appointment.UpdatedAt = DateTime.UtcNow;

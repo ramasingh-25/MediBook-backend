@@ -52,8 +52,9 @@ namespace MediBook.AppointmentService.Repositories
 
         public async Task<List<Appointment>> FindByProviderIdAndAppointmentDate(string providerId, DateTime date)
         {
+            var targetDate = DateTime.SpecifyKind(date.Date, DateTimeKind.Utc);
             return await _context.Appointments
-                .Where(a => a.ProviderId == providerId && a.AppointmentDate.Date == date.Date)
+                .Where(a => a.ProviderId == providerId && a.AppointmentDate >= targetDate && a.AppointmentDate < targetDate.AddDays(1))
                 .OrderBy(a => a.StartTime)
                 .ToListAsync();
         }

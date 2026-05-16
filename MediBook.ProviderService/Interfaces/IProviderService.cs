@@ -6,6 +6,7 @@ namespace MediBook.ProviderService.Interfaces
     {
         Task<ProviderResponse> RegisterProvider(RegisterProviderRequest request);
         Task<ProviderResponse?> GetProviderById(string providerId);
+        Task<ProviderResponse?> GetProviderByUserId(string userId);
         Task<List<ProviderResponse>> GetBySpecialization(string specialization);
         Task<List<ProviderResponse>> SearchProviders(string searchTerm);
         Task<ProviderResponse?> UpdateProvider(string providerId, UpdateProviderRequest request);

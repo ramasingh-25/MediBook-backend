@@ -5,6 +5,7 @@ namespace MediBook.PaymentService.DTOs
         public string PaymentId { get; set; }
         public string AppointmentId { get; set; }
         public string PatientId { get; set; }
+        public string ProviderId { get; set; }
         public decimal Amount { get; set; }
         public string Status { get; set; }
         public string Mode { get; set; }

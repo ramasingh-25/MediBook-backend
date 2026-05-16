@@ -39,8 +39,6 @@ D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Microsoft.OpenApi
 D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
 D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Mono.TextTemplating.dll
 D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Newtonsoft.Json.dll
-D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Npgsql.dll
-D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -131,3 +129,5 @@ D:\MediBook-backend\MediBook.ProviderService\obj\Debug\net10.0\refint\MediBook.P
 D:\MediBook-backend\MediBook.ProviderService\obj\Debug\net10.0\MediBook.ProviderService.pdb
 D:\MediBook-backend\MediBook.ProviderService\obj\Debug\net10.0\MediBook.ProviderService.genruntimeconfig.cache
 D:\MediBook-backend\MediBook.ProviderService\obj\Debug\net10.0\ref\MediBook.ProviderService.dll
+D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Npgsql.dll
+D:\MediBook-backend\MediBook.ProviderService\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

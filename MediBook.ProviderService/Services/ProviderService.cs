@@ -26,6 +26,8 @@ namespace MediBook.ProviderService.Services
             {
                 ProviderId = Guid.NewGuid().ToString(),
                 UserId = request.UserId,
+                FullName = request.FullName,
+                PhoneNumber = request.PhoneNumber,
                 Specialization = request.Specialization,
                 Qualification = request.Qualification,
                 ExperienceYears = request.ExperienceYears,
@@ -48,6 +50,12 @@ namespace MediBook.ProviderService.Services
             return provider == null ? null : MapToResponse(provider);
         }
 
+        public async Task<ProviderResponse?> GetProviderByUserId(string userId)
+        {
+            var provider = await _repository.FindByUserId(userId);
+            return provider == null ? null : MapToResponse(provider);
+        }
+
         public async Task<List<ProviderResponse>> GetBySpecialization(string specialization)
         {
             var providers = await _repository.FindBySpecialization(specialization);
@@ -65,6 +73,8 @@ namespace MediBook.ProviderService.Services
             var provider = await _repository.FindByProviderId(providerId);
             if (provider == null) return null;
 
+            provider.FullName = request.FullName ?? provider.FullName;
+            provider.PhoneNumber = request.PhoneNumber ?? provider.PhoneNumber;
             provider.Specialization = request.Specialization ?? provider.Specialization;
             provider.Qualification = request.Qualification ?? provider.Qualification;
             provider.ExperienceYears = request.ExperienceYears ?? provider.ExperienceYears;
@@ -125,6 +135,8 @@ namespace MediBook.ProviderService.Services
             {
                 ProviderId = provider.ProviderId,
                 UserId = provider.UserId,
+                FullName = provider.FullName,
+                PhoneNumber = provider.PhoneNumber,
                 Specialization = provider.Specialization,
                 Qualification = provider.Qualification,
                 ExperienceYears = provider.ExperienceYears,

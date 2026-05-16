@@ -22,7 +22,7 @@ namespace MediBook.AvailabilityService.Repositories
         public async Task<List<AvailabilitySlot>> FindByProviderId(string providerId)
         {
             return await _context.AvailabilitySlots
-                .Where(s => s.ProviderId == providerId)
+                .Where(s => s.ProviderId.ToLower() == providerId.ToLower())
                 .OrderBy(s => s.Date)
                 .ThenBy(s => s.StartTime)
                 .ToListAsync();
@@ -30,17 +30,19 @@ namespace MediBook.AvailabilityService.Repositories
 
         public async Task<List<AvailabilitySlot>> FindByProviderIdAndDate(string providerId, DateTime date)
         {
+            var targetDate = DateTime.SpecifyKind(date.Date, DateTimeKind.Utc);
             return await _context.AvailabilitySlots
-                .Where(s => s.ProviderId == providerId && s.Date.Date == date.Date)
+                .Where(s => s.ProviderId == providerId && s.Date >= targetDate && s.Date < targetDate.AddDays(1))
                 .OrderBy(s => s.StartTime)
                 .ToListAsync();
         }
 
         public async Task<List<AvailabilitySlot>> FindAvailableByProviderAndDate(string providerId, DateTime date)
         {
+            var targetDate = DateTime.SpecifyKind(date.Date, DateTimeKind.Utc);
             return await _context.AvailabilitySlots
-                .Where(s => s.ProviderId == providerId && 
-                           s.Date.Date == date.Date && 
+                .Where(s => s.ProviderId.ToLower() == providerId.ToLower() && 
+                           s.Date >= targetDate && s.Date < targetDate.AddDays(1) && 
                            !s.IsBooked && 
                            !s.IsBlocked)
                 .OrderBy(s => s.StartTime)

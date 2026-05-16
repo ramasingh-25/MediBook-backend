@@ -19,7 +19,7 @@ namespace MediBook.AvailabilityService.Services
             {
                 SlotId = Guid.NewGuid().ToString(),
                 ProviderId = request.ProviderId,
-                Date = request.Date,
+                Date = DateTime.SpecifyKind(request.Date.Date, DateTimeKind.Utc),
                 StartTime = request.StartTime,
                 EndTime = request.EndTime,
                 DurationMinutes = request.DurationMinutes,
@@ -44,7 +44,7 @@ namespace MediBook.AvailabilityService.Services
                 {
                     SlotId = Guid.NewGuid().ToString(),
                     ProviderId = request.ProviderId,
-                    Date = currentDate,
+                    Date = DateTime.SpecifyKind(currentDate.Date, DateTimeKind.Utc),
                     StartTime = request.StartTime,
                     EndTime = request.EndTime,
                     DurationMinutes = request.DurationMinutes,
@@ -72,7 +72,7 @@ namespace MediBook.AvailabilityService.Services
                 {
                     SlotId = Guid.NewGuid().ToString(),
                     ProviderId = request.ProviderId,
-                    Date = currentDate,
+                    Date = DateTime.SpecifyKind(currentDate.Date, DateTimeKind.Utc),
                     StartTime = request.StartTime,
                     EndTime = request.EndTime,
                     DurationMinutes = request.DurationMinutes,
@@ -157,8 +157,12 @@ namespace MediBook.AvailabilityService.Services
         {
             var slot = await _repository.FindBySlotId(slotId);
             if (slot == null) return null;
-
-            slot.Date = request.Date ?? slot.Date;
+            
+            if (request.Date.HasValue)
+            {
+                slot.Date = DateTime.SpecifyKind(request.Date.Value.Date, DateTimeKind.Utc);
+            }
+            
             slot.StartTime = request.StartTime ?? slot.StartTime;
             slot.EndTime = request.EndTime ?? slot.EndTime;
             slot.DurationMinutes = request.DurationMinutes ?? slot.DurationMinutes;

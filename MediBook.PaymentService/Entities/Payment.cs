@@ -5,6 +5,7 @@ namespace MediBook.PaymentService.Entities
         public string PaymentId { get; set; }
         public string AppointmentId { get; set; }
         public string PatientId { get; set; }
+        public string ProviderId { get; set; }
         public decimal Amount { get; set; }
         public string Status { get; set; } // Pending, Paid, Refunded, Failed
         public string Mode { get; set; } // Card, UPI, Wallet, Cash

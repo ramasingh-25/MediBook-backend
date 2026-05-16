@@ -9,7 +9,7 @@ services:
     name: medibook-auth
     env: docker
     dockerContext: ./MediBook.AuthService/MediBook.AuthService
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./MediBook.AuthService/MediBook.AuthService/Dockerfile
     plan: free
     envVars:
       - key: ConnectionStrings__DefaultConnection
@@ -21,7 +21,7 @@ services:
     name: medibook-appointment
     env: docker
     dockerContext: ./MediBook.AppointmentService
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./MediBook.AppointmentService/Dockerfile
     plan: free
     envVars:
       - key: ConnectionStrings__DefaultConnection
@@ -33,7 +33,7 @@ services:
     name: medibook-provider
     env: docker
     dockerContext: ./MediBook.ProviderService
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./MediBook.ProviderService/Dockerfile
     plan: free
     envVars:
       - key: ConnectionStrings__DefaultConnection
@@ -45,7 +45,7 @@ services:
     name: medibook-availability
     env: docker
     dockerContext: ./MediBook.AvailabilityService
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./MediBook.AvailabilityService/Dockerfile
     plan: free
     envVars:
       - key: ConnectionStrings__DefaultConnection
@@ -57,7 +57,7 @@ services:
     name: medibook-notification
     env: docker
     dockerContext: ./MediBook.NotificationService
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./MediBook.NotificationService/Dockerfile
     plan: free
     envVars:
       - key: ConnectionStrings__DefaultConnection
@@ -69,7 +69,7 @@ services:
     name: medibook-payment
     env: docker
     dockerContext: ./MediBook.PaymentService
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./MediBook.PaymentService/Dockerfile
     plan: free
     envVars:
       - key: ConnectionStrings__DefaultConnection
@@ -81,7 +81,7 @@ services:
     name: medibook-record
     env: docker
     dockerContext: ./MediBook.RecordService
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./MediBook.RecordService/Dockerfile
     plan: free
     envVars:
       - key: ConnectionStrings__DefaultConnection
@@ -93,7 +93,7 @@ services:
     name: medibook-review
     env: docker
     dockerContext: ./MediBook.ReviewService
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./MediBook.ReviewService/Dockerfile
     plan: free
     envVars:
       - key: ConnectionStrings__DefaultConnection

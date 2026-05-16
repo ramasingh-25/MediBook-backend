@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MediBook-backend\\MediBook.ProviderService\\MediBook.ProviderService.csproj": {}
+    "d:\\MediBook-backend\\MediBook.ProviderService\\MediBook.ProviderService.csproj": {}
   },
   "projects": {
-    "D:\\MediBook-backend\\MediBook.ProviderService\\MediBook.ProviderService.csproj": {
+    "d:\\MediBook-backend\\MediBook.ProviderService\\MediBook.ProviderService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MediBook-backend\\MediBook.ProviderService\\MediBook.ProviderService.csproj",
+        "projectUniqueName": "d:\\MediBook-backend\\MediBook.ProviderService\\MediBook.ProviderService.csproj",
         "projectName": "MediBook.ProviderService",
-        "projectPath": "D:\\MediBook-backend\\MediBook.ProviderService\\MediBook.ProviderService.csproj",
+        "projectPath": "d:\\MediBook-backend\\MediBook.ProviderService\\MediBook.ProviderService.csproj",
         "packagesPath": "C:\\Users\\talkt\\.nuget\\packages\\",
-        "outputPath": "D:\\MediBook-backend\\MediBook.ProviderService\\obj\\",
+        "outputPath": "d:\\MediBook-backend\\MediBook.ProviderService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

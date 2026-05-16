@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MediBook.ProviderService.Migrations
 {
     [DbContext(typeof(ProviderDbContext))]
-    [Migration("20260514163239_PendingChanges")]
-    partial class PendingChanges
+    [Migration("20260516091031_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

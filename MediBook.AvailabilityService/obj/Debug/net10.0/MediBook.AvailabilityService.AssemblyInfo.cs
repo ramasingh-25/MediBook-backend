@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediBook.AvailabilityService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60cb6e467dacefb418a6f46717d97caeea7045fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+631209468571775dcc9765c56b7719a1de3de9cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediBook.AvailabilityService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediBook.AvailabilityService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

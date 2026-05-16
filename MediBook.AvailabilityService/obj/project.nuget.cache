@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jFrl5xx52mg=",
+  "dgSpecHash": "rCeUmpDcmMU=",
   "success": true,
-  "projectFilePath": "D:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj",
+  "projectFilePath": "d:\\MediBook-backend\\MediBook.AvailabilityService\\MediBook.AvailabilityService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talkt\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\talkt\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.7\\microsoft.aspnetcore.authentication.jwtbearer.10.0.7.nupkg.sha512",

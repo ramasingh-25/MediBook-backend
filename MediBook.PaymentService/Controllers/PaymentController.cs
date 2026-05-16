@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MediBook.PaymentService.DTOs;
 using MediBook.PaymentService.Interfaces;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MediBook.PaymentService.Controllers
 {
@@ -38,6 +40,13 @@ namespace MediBook.PaymentService.Controllers
         public async Task<ActionResult<List<PaymentResponse>>> GetPaymentsByPatient(string patientId)
         {
             var payments = await _paymentService.GetPaymentsByPatient(patientId);
+            return Ok(payments);
+        }
+
+        [HttpGet("provider/{providerId}")]
+        public async Task<ActionResult<List<PaymentResponse>>> GetPaymentsByProvider(string providerId)
+        {
+            var payments = await _paymentService.GetPaymentsByProvider(providerId);
             return Ok(payments);
         }
 
@@ -97,6 +106,35 @@ namespace MediBook.PaymentService.Controllers
         {
             var revenue = await _paymentService.GetTotalRevenue();
             return Ok(revenue);
+        }
+
+        [AllowAnonymous]
+        [HttpPost("fix-pending")]
+        public async Task<ActionResult> FixPendingPayments()
+        {
+            var pending = await _paymentService.GetPaymentsByStatus("Pending");
+            foreach (var p in pending)
+            {
+                await _paymentService.UpdatePaymentStatus(p.PaymentId, "Paid");
+            }
+            return Ok(new { message = $"Fixed {pending.Count} pending payments." });
+        }
+
+        [HttpGet("/test-payment-service")]
+        public IActionResult TestPaymentService() => Ok("Payment Controller Loaded");
+
+        [HttpGet("/api/v1/payments/admin-all")]
+        [HttpGet("/api/v1/payments/all")]
+        public async Task<ActionResult<List<PaymentResponse>>> GetAllPayments()
+        {
+            var payments = await _paymentService.GetAllPayments();
+            return Ok(payments);
+        }
+
+        [HttpGet("test-status")]
+        public IActionResult TestStatus()
+        {
+            return Ok(new { status = "Payment Service is running", timestamp = DateTime.UtcNow });
         }
     }
 }

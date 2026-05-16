@@ -32,6 +32,14 @@ namespace MediBook.PaymentService.Repositories
                 .ToListAsync();
         }
 
+        public async Task<List<Payment>> FindByProviderId(string providerId)
+        {
+            return await _context.Payments
+                .Where(p => p.ProviderId == providerId)
+                .OrderByDescending(p => p.CreatedAt)
+                .ToListAsync();
+        }
+
         public async Task<List<Payment>> FindByStatus(string status)
         {
             return await _context.Payments
@@ -82,6 +90,20 @@ namespace MediBook.PaymentService.Repositories
             _context.Payments.Remove(payment);
             await _context.SaveChangesAsync();
             return true;
+        }
+        
+        public async Task<List<Payment>> GetAll()
+        {
+            return await _context.Payments
+                .OrderByDescending(p => p.CreatedAt)
+                .ToListAsync();
+        }
+
+        public async Task<decimal> GetTotalRevenue()
+        {
+            return await _context.Payments
+                .Where(p => p.Status == "Paid" || p.Status == "Completed" || p.Status == "Success")
+                .SumAsync(p => p.Amount);
         }
     }
 }

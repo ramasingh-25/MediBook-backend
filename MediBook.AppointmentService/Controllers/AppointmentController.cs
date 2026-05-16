@@ -17,10 +17,21 @@ namespace MediBook.AppointmentService.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<AppointmentResponse>> BookAppointment([FromBody] BookAppointmentRequest request)
+        public async Task<ActionResult> BookAppointment([FromBody] BookAppointmentRequest request)
         {
-            var response = await _appointmentService.BookAppointment(request);
-            return CreatedAtAction(nameof(GetById), new { appointmentId = response.AppointmentId }, response);
+            try
+            {
+                var response = await _appointmentService.BookAppointment(request);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { 
+                    message = "Failed to book appointment", 
+                    error = ex.Message,
+                    innerError = ex.InnerException?.Message 
+                });
+            }
         }
 
         [HttpGet("{appointmentId}")]

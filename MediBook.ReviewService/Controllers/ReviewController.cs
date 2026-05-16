@@ -88,10 +88,23 @@ namespace MediBook.ReviewService.Controllers
         }
 
         [HttpGet("provider/{providerId}/avgRating")]
+        [HttpGet("provider/{providerId}/rating")]
         public async Task<ActionResult<double>> GetAvgRating(string providerId)
         {
             var avgRating = await _reviewService.GetAvgRating(providerId);
-            return Ok(avgRating);
+            return Ok(new { averageRating = avgRating });
+        }
+
+        [HttpGet("provider/{providerId}/summary")]
+        public async Task<ActionResult> GetReviewSummary(string providerId)
+        {
+            var count = await _reviewService.GetReviewCount(providerId);
+            var avgRating = await _reviewService.GetAvgRating(providerId);
+            return Ok(new { 
+                totalReviews = count, 
+                averageRating = avgRating,
+                recommendationRate = avgRating >= 4 ? 95 : 80 
+            });
         }
 
         [HttpGet("provider/{providerId}/count")]

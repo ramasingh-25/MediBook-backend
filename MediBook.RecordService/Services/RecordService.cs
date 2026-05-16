@@ -18,7 +18,16 @@ namespace MediBook.RecordService.Services
             var existingRecord = await _repository.FindByAppointmentId(request.AppointmentId);
             if (existingRecord != null)
             {
-                throw new InvalidOperationException("A medical record already exists for this appointment.");
+                // Intelligent Upsert: If it exists, update it instead of failing
+                existingRecord.Diagnosis = request.Diagnosis;
+                existingRecord.Prescription = request.Prescription;
+                existingRecord.Notes = request.Notes;
+                if (request.AttachmentUrl != null) existingRecord.AttachmentUrl = request.AttachmentUrl;
+                if (request.FollowUpDate.HasValue) existingRecord.FollowUpDate = request.FollowUpDate;
+                existingRecord.UpdatedAt = DateTime.UtcNow;
+
+                var updated = await _repository.UpdateRecord(existingRecord);
+                return MapToResponse(updated);
             }
 
             var record = new MedicalRecord

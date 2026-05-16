@@ -58,6 +58,10 @@ namespace MediBook.PaymentService.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("ProviderId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime?>("RefundedAt")
                         .HasColumnType("timestamp with time zone");
 

@@ -32,6 +32,8 @@ D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Mono.TextTemplatin
 D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Newtonsoft.Json.dll
 D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Npgsql.dll
 D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\BouncyCastle.Crypto.dll
+D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Razorpay.dll
 D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -131,5 +133,3 @@ D:\MediBook-backend\MediBook.PaymentService\obj\Debug\net10.0\refint\MediBook.Pa
 D:\MediBook-backend\MediBook.PaymentService\obj\Debug\net10.0\MediBook.PaymentService.pdb
 D:\MediBook-backend\MediBook.PaymentService\obj\Debug\net10.0\MediBook.PaymentService.genruntimeconfig.cache
 D:\MediBook-backend\MediBook.PaymentService\obj\Debug\net10.0\ref\MediBook.PaymentService.dll
-D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\BouncyCastle.Crypto.dll
-D:\MediBook-backend\MediBook.PaymentService\bin\Debug\net10.0\Razorpay.dll

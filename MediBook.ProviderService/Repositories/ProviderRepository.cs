@@ -16,7 +16,7 @@ namespace MediBook.ProviderService.Repositories
 
         public async Task<Provider?> FindByUserId(string userId)
         {
-            return await _context.Providers.FirstOrDefaultAsync(p => p.UserId == userId);
+            return await _context.Providers.FirstOrDefaultAsync(p => p.UserId.ToLower() == userId.ToLower());
         }
 
         public async Task<Provider?> FindByProviderId(string providerId)

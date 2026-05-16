@@ -53,6 +53,10 @@ namespace MediBook.ProviderService.Migrations
                     b.Property<int>("ExperienceYears")
                         .HasColumnType("integer");
 
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<bool>("IsAvailable")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
@@ -62,6 +66,9 @@ namespace MediBook.ProviderService.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("boolean")
                         .HasDefaultValue(false);
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("text");
 
                     b.Property<string>("Qualification")
                         .IsRequired()
